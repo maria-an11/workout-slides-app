@@ -1,70 +1,151 @@
-# Getting Started with Create React App
+# Workout Slides App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple React-based presentation tool that guides users through a basic workout routine with clear instructions and images.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## Overview
 
-### `npm start`
+This app presents a step-by-step workout plan in the form of slides. Each slide displays an exercise with helpful text and an image (if applicable), making it easy to follow along and maintain proper form.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+🔗 **Live Demo**:
+[Click here to view the deployed app](https://your-vercel-app-url.vercel.app)
 
-### `npm test`
+## Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. **Keyboard Navigation**
+   Users can navigate slides using the left/right arrow keys (← for previous, → for next) and press **"R"** to restart the presentation.
 
-### `npm run build`
+2. **Save Current Slide to localStorage**
+   The current slide is persisted in `localStorage` so that users resume at the same slide even after a page reload.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. **Swipe Gestures for Mobile**
+   Touch-enabled devices support swipe left/right gestures for intuitive slide navigation.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. **Better Accessibility**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+   - ARIA roles and labels (e.g., `aria-live`, `role="region"`) help screen readers identify the slide content.
+   - Buttons are keyboard-focusable with visible focus styles for enhanced usability.
 
-### `npm run eject`
+5. **Customizable Slide Content**
+   Slides support customizable content, including images, titles, and text to tailor each slide for your needs.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. **Dot Navigation**
+   Small navigation dots represent each slide, allowing users to jump directly to any slide.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+7. **Fullscreen Mode**
+   Toggle fullscreen mode for a distraction-free and immersive presentation experience.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+8. **Dark Mode Auto-detect**
+   The app automatically switches to dark mode on systems where `prefers-color-scheme: dark` is set.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Screenshots
 
-## Learn More
+### Desktop View (Light Mode)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+![Desktop Screenshot](screenshots/desktop.png)
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Mobile View (Light Mode)
 
-### Code Splitting
+![Mobile Screenshot](screenshots/mobile.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Desktop View (Dark Mode)
 
-### Analyzing the Bundle Size
+![Desktop Dark Screenshot](screenshots/desktop-dark.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Mobile View (Dark Mode)
 
-### Making a Progressive Web App
+![Mobile Dark Screenshot](screenshots/mobile-dark.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Installation
 
-### Advanced Configuration
+1. **Clone the repository:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+   ```bash
+   git clone https://github.com/maria-an11/slides-app.git
+   cd slides-app
+   ```
 
-### Deployment
+2. **Install dependencies:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+   ```bash
+   npm install
+   ```
 
-### `npm run build` fails to minify
+   or with Yarn:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+   ```bash
+   yarn install
+   ```
+
+3. **Start the development server:**
+
+   ```bash
+   npm start
+   ```
+
+   or with Yarn:
+
+   ```bash
+   yarn start
+   ```
+
+The app should now be running at [http://localhost:3000](http://localhost:3000).
+
+## Build & Deployment
+
+To create a production build, run:
+
+```bash
+npm run build
+```
+
+or with Yarn:
+
+```bash
+yarn build
+```
+
+You can then deploy the contents of the `build/` directory to your favorite hosting service (e.g., Vercel, Netlify, GitHub Pages).
+
+## Folder Structure
+
+```
+your-project/
+├── public/
+│   └── index.html
+├── src/
+│   ├── components/
+│   │   ├── Slides.js
+│   │   ├── Slides.css
+│   │   ├── Navigation/
+│   │   │   ├── Navigation.jsx
+│   │   │   └── Navigation.css
+│   │   ├── ProgressBar/
+│   │   │   ├── ProgressBar.jsx
+│   │   │   └── ProgressBar.css
+│   │   ├── Dots/
+│   │   │   ├── Dots.jsx
+│   │   │   └── Dots.css
+│   │   └── SlideCard/
+│   │       ├── SlideCard.jsx
+│   │       └── SlideCard.css
+│   ├── hooks/
+│   │   ├── useSwipeNavigation.js
+│   │   ├── useFullscreen.js
+│   │   └── useKeyboardNavigation.js
+│   ├── data/
+│   │   └── slidesData.js
+│   ├── App.jsx
+│   ├── App.css
+│   └── index.js
+├── .gitignore
+├── package.json
+└── README.md
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

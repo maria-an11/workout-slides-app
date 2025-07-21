@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import "./App.css";
+import Slides from "./components/Slides";
+import "./components/Slides.css";
 
-function App() {
+function App({ slides }) {
+  const [darkMode, setDarkMode] = useState(() => {
+    const saved = localStorage.getItem("darkMode");
+    if (saved !== null) return saved === "true";
+    return window.matchMedia("(prefers-color-scheme: dark)").matches;
+  });
+
+  const [currentSlide, setCurrentSlide] = useState(() => {
+    const saved = localStorage.getItem("currentSlide");
+    return saved !== null ? parseInt(saved, 10) : 0;
+  });
+
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+    localStorage.setItem("darkMode", darkMode.toString());
+  }, [darkMode]);
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="toggle-container">
+        <label className="switch">
+          <input
+            type="checkbox"
+            checked={darkMode}
+            onChange={() => setDarkMode(!darkMode)}
+          />
+          <span className="slider round"></span>
+        </label>
+        <span className="toggle-label">
+          {darkMode ? "Dark Mode" : "Light Mode"}
+        </span>
+      </div>
+
+      <Slides
+        slides={slides}
+        currentSlide={currentSlide}
+        setCurrentSlide={setCurrentSlide}
+      />
     </div>
   );
 }
