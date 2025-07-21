@@ -11,7 +11,7 @@ This app presents a step-by-step workout plan in the form of slides. Each slide 
 ---
 
 🔗 **Live Demo**:
-[Click here to view the deployed app](https://your-vercel-app-url.vercel.app)
+[Click here to view the deployed app](https://workout-slides-app.vercel.app/)
 
 ## Features
 
@@ -45,19 +45,19 @@ This app presents a step-by-step workout plan in the form of slides. Each slide 
 
 ### Desktop View (Light Mode)
 
-![Desktop Screenshot](screenshots/desktop.png)
+<img src="screenshots/desktop.png" alt="Desktop Screenshot" width="400" />
 
 ### Mobile View (Light Mode)
 
-![Mobile Screenshot](screenshots/mobile.png)
+<img src="screenshots/mobile.png" alt="Mobile Screenshot" width="250" />
 
 ### Desktop View (Dark Mode)
 
-![Desktop Dark Screenshot](screenshots/desktop-dark.png)
+<img src="screenshots/desktop-dark.png" alt="Desktop Dark Screenshot" width="400" />
 
 ### Mobile View (Dark Mode)
 
-![Mobile Dark Screenshot](screenshots/mobile-dark.png)
+<img src="screenshots/mobile-dark.png" alt="Mobile Dark Screenshot" width="250" />
 
 ## Installation
 
