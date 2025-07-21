@@ -4,6 +4,7 @@ node_modules/
 # Build output
 dist/
 build/
+coverage/
 
 # System files
 .DS_Store

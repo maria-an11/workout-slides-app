@@ -64,8 +64,8 @@ This app presents a step-by-step workout plan in the form of slides. Each slide 
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/maria-an11/slides-app.git
-   cd slides-app
+   git clone https://github.com/maria-an11/workout-slides-app.git
+   cd workout-slides-app
    ```
 
 2. **Install dependencies:**
